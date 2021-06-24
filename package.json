@@ -1,7 +1,7 @@
 {
   "name": "react-native-vertical-swipe-view",
   "title": "React Native Vertical Swipe View",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native Vertical Swipe View",
   "main": "index.ts",
   "scripts": {

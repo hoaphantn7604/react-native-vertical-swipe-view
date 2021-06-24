@@ -15,10 +15,11 @@ or
 #### Props
 | Props              | Params               | isRequire | Description      |
 | ------------------ | -------------------- | --------- | ---------------- |
-| autoShow           | Boolean              | No        |                  |
 | style              | ViewStyle            | No        |                  |
+| headerStyle        | ViewStyle            | No        |                  |
 | backgroundColor    | String               | No        |                  |
 | maxHeight          | Number               | Yes       |                  |
+| autoShow           | Boolean              | No        |                  |
 | position           | 'top' or 'bottom'    | No        |                  |
 | renderHeader       | () => JSX.Element    | No        |                  |
 | onShow             | (status)=> void      | No        |                  |
