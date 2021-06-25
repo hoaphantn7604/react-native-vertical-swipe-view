@@ -10,7 +10,7 @@ or
 ```
 
 ### Demo
-![](https://github.com/hoaphantn7604/file-upload/blob/master/document/swipeview/demo.png)
+![](https://github.com/hoaphantn7604/file-upload/blob/master/document/swipeview/demo.gif)
 
 #### Props
 | Props              | Params               | isRequire | Description      |
