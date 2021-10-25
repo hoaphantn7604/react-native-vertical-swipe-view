@@ -7,9 +7,10 @@ interface Props {
   backgroundColor?: string;
   maxHeight: number;
   position?: 'top' | 'bottom';
-  autoShow?: boolean;
+  visible?: boolean;
   renderHeader?: () => JSX.Element;
-  onShow?: (status: boolean)=> void;
+  onRequestClose?: ()=> void;
+  onRequestShow?: ()=> void;
 }
 
 export type SwipeView = React.FC<Props>;

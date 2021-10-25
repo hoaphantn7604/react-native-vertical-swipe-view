@@ -5,16 +5,28 @@ import { styles } from './styles';
 import { SwipeView } from './type';
 
 const SwipeViewComponent: SwipeView = props => {
-  const { style, headerStyle, backgroundColor= 'transparent', maxHeight = 180, renderHeader, position = 'top', autoShow = false, onShow } = props;
+  const {
+    style,
+    headerStyle,
+    backgroundColor = 'transparent',
+    maxHeight = 180,
+    renderHeader,
+    position = 'top',
+    visible = false,
+    onRequestClose,
+    onRequestShow,
+  } = props;
   const minHeight = 0;
   const [viewHeight] = useState(new Animated.Value(minHeight));
   let currentHeight = 0;
 
   useEffect(() => {
-    if (autoShow) {
-      checkshow(autoShow);
+    if (visible) {
+      checkshow(visible);
+    } else {
+      checkshow(false);
     }
-  }, [autoShow])
+  }, [visible])
 
   const checkshow = (status: boolean) => {
     Animated.timing(viewHeight, {
@@ -26,9 +38,15 @@ const SwipeViewComponent: SwipeView = props => {
   };
 
   const handlerShow = (status: boolean) => {
-    if (onShow) {
-      onShow(status);
-    }
+    if(!status){
+      if (onRequestClose) {
+        onRequestClose();
+      }
+    }else{
+      if (onRequestShow) {
+        onRequestShow();
+      }
+    }  
   }
 
   const panResponder = useRef(

@@ -15,14 +15,17 @@ or
 #### Props
 | Props              | Params               | isRequire | Description      |
 | ------------------ | -------------------- | --------- | ---------------- |
+| visible            | Boolean              | No        |                  |
 | style              | ViewStyle            | No        |                  |
 | headerStyle        | ViewStyle            | No        |                  |
 | backgroundColor    | String               | No        |                  |
 | maxHeight          | Number               | Yes       |                  |
-| autoShow           | Boolean              | No        |                  |
 | position           | 'top' or 'bottom'    | No        |                  |
 | renderHeader       | () => JSX.Element    | No        |                  |
-| onShow             | (status)=> void      | No        |                  |
+| onRequestShow      | ()=> void            | No        |                  |
+| onRequestClose     | ()=> void            | No        |                  |
+
+
 
 
 ## Usage
