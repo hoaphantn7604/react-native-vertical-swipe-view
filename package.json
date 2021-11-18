@@ -1,7 +1,7 @@
 {
   "name": "react-native-vertical-swipe-view",
   "title": "React Native Vertical Swipe View",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "React Native Vertical Swipe View",
   "main": "index.ts",
   "scripts": {
@@ -17,7 +17,9 @@
     "elements",
     "components",
     "vertical",
-    "swipe-view"
+    "swipe-view",
+    "alert",
+    "modal"
   ],
   "author": {
     "name": "Hoa Phan",
