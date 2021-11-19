@@ -1,9 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
-  containerTop: {},
+  containerTop: {
+    overflow: 'hidden'
+  },
   containerBottom: {
-    justifyContent: 'flex-end',
+    overflow: 'hidden'
   },
   header: {
     backgroundColor: '#BBBBBB',

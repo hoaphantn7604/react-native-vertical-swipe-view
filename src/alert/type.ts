@@ -6,7 +6,8 @@ export interface Props {
   maxHeight?: number;
   timeout?: number;
   position?: 'top' | 'bottom',
-  backgroundColor?: string;
+  type?: 'info' | 'warning' | 'error' | 'success'
+  message?: string;
   children?: ReactNode | undefined 
 }
 
