@@ -2,10 +2,10 @@ import { StyleSheet } from 'react-native';
 
 export const styles = StyleSheet.create({
   containerTop: {
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   containerBottom: {
-    overflow: 'hidden'
+    overflow: 'hidden',
   },
   header: {
     backgroundColor: '#BBBBBB',

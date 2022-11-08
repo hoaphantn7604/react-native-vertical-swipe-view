@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Easing, PanResponder, View } from 'react-native';
 import { Animated } from 'react-native';
 import { styles } from './styles';
-import { SwipeView } from './type';
+import type { SwipeView } from './type';
 
-const SwipeViewComponent: SwipeView = props => {
+const SwipeViewComponent: SwipeView = (props) => {
   const {
     style,
     headerStyle,
@@ -26,7 +26,8 @@ const SwipeViewComponent: SwipeView = props => {
     } else {
       checkshow(false);
     }
-  }, [visible])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [visible]);
 
   const checkshow = (status: boolean) => {
     Animated.timing(viewHeight, {
@@ -34,31 +35,33 @@ const SwipeViewComponent: SwipeView = props => {
       duration: 180,
       easing: Easing.linear,
       useNativeDriver: false,
-    }).start(() => { currentHeight = status ? maxHeight : minHeight });
+    }).start(() => {
+      currentHeight = status ? maxHeight : minHeight;
+    });
   };
 
   const handlerShow = (status: boolean) => {
-    if(!status){
+    if (!status) {
       if (onRequestClose) {
         onRequestClose();
       }
-    }else{
+    } else {
       if (onRequestShow) {
         onRequestShow();
       }
-    }  
-  }
+    }
+  };
 
   const panResponder = useRef(
     PanResponder.create({
-      onStartShouldSetPanResponder: (evt, gestureState) => {
+      onStartShouldSetPanResponder: (_evt, _gestureState) => {
         return true;
       },
-      onPanResponderEnd: (evt, gestureState) => {
+      onPanResponderEnd: (_evt, _gestureState) => {
         return true;
       },
       onMoveShouldSetPanResponder: () => true,
-      onPanResponderMove: (evt, gestureState) => {
+      onPanResponderMove: (_evt, gestureState) => {
         const { dy } = gestureState;
 
         if (position === 'top') {
@@ -85,10 +88,10 @@ const SwipeViewComponent: SwipeView = props => {
             duration: 80,
             easing: Easing.linear,
             useNativeDriver: false,
-          }).start(() => { });
+          }).start(() => {});
         }
       },
-      onPanResponderRelease: (evt, gestureState) => {
+      onPanResponderRelease: (_evt, gestureState) => {
         const { dy } = gestureState;
         if (dy !== 0) {
           if (position === 'top') {
@@ -138,7 +141,7 @@ const SwipeViewComponent: SwipeView = props => {
           }
         }
       },
-    }),
+    })
   ).current;
 
   const _renderTop = () => {
@@ -148,10 +151,14 @@ const SwipeViewComponent: SwipeView = props => {
           style={{
             backgroundColor: backgroundColor,
             height: viewHeight,
-          }}>
+          }}
+        >
           {props?.children}
         </Animated.View>
-        <Animated.View {...panResponder.panHandlers} style={[styles.header, headerStyle]}>
+        <Animated.View
+          {...panResponder.panHandlers}
+          style={[styles.header, headerStyle]}
+        >
           {renderHeader ? renderHeader() : <View style={styles.pan} />}
         </Animated.View>
       </View>
@@ -161,14 +168,18 @@ const SwipeViewComponent: SwipeView = props => {
   const _renderBottom = () => {
     return (
       <View style={[styles.containerBottom, style]}>
-        <Animated.View {...panResponder.panHandlers} style={[styles.header, headerStyle]}>
+        <Animated.View
+          {...panResponder.panHandlers}
+          style={[styles.header, headerStyle]}
+        >
           {renderHeader ? renderHeader() : <View style={styles.pan} />}
         </Animated.View>
         <Animated.View
           style={{
             backgroundColor: backgroundColor,
             height: viewHeight,
-          }}>
+          }}
+        >
           {props?.children}
         </Animated.View>
       </View>

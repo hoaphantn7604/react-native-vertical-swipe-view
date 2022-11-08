@@ -1,43 +1,9 @@
-# react-native-vertical-swipe-view
-React Native Vertical Swipe View.
-## Getting started
-
-```js
-    npm install react-native-vertical-swipe-view --save
-```
-
-or
-
-```js
-    yarn add react-native-vertical-swipe-view
-```
-
-### Demo
-
-![](https://github.com/hoaphantn7604/file-upload/blob/master/document/swipeview/demo.gif)
-
-#### Props
-
-| Props           | Params            | isRequire | Description |
-| --------------- | ----------------- | --------- | ----------- |
-| visible         | Boolean           | No        |             |
-| style           | ViewStyle         | No        |             |
-| headerStyle     | ViewStyle         | No        |             |
-| backgroundColor | String            | No        |             |
-| maxHeight       | Number            | Yes       |             |
-| position        | 'top' or 'bottom' | No        |             |
-| renderHeader    | () => JSX.Element | No        |             |
-| onRequestShow   | ()=> void         | No        |             |
-| onRequestClose  | ()=> void         | No        |             |
-
-## Usage
-
-```javascript
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { StyleSheet, View, SafeAreaView } from 'react-native';
 import SwipeView from 'react-native-vertical-swipe-view';
 
-const SwipeViewScreen = (_props) => {
+const SwipeViewScreen = (_props: any) => {
   const _renderHeaderTop = () => {
     return (
       <View style={styles.headerTop}>
@@ -125,4 +91,3 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 });
-```
