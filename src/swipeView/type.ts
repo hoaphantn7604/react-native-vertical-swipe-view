@@ -8,6 +8,7 @@ interface Props {
   maxHeight: number;
   position?: 'top' | 'bottom';
   visible?: boolean;
+  children?:  React.ReactNode;
   renderHeader?: () => React.ReactNode;
   onRequestClose?: () => void;
   onRequestShow?: () => void;
